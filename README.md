@@ -1,9 +1,11 @@
 # ProyectoFinalNoSQL
 
 # Descargar Librerias
-pip instal requests
-pip instal json
-pip instal py2neo
+pip install requests
+
+pip install json
+
+pip install py2neo
 
 # MONGO
 En la terminal correr:
@@ -11,7 +13,9 @@ En la terminal correr:
 python3 personajes.py
 
 docker stop mongo
+
 docker rm mongo
+
 docker run -p 27017:27017 \
        -v mongo-data:/data/db \
        --name mongo \
@@ -36,21 +40,33 @@ db.char.aggregate([ { $match: { $and: [ { "name": { $regex: "rick", $options: "i
 
 # NEO4J
 Abrir Neo4j Desktop
+
 Crear nueva base de datos local:
+
     New
+
     Create project
+
     Add
+
     Local DBMS
+
 Nombrar base de datos (cualquier nombre) y poner contraseña: Rick&Morty (puede ser cualquier otra o ninguna)
+
 Activar base de datos:
+    
     Create
+
     Start
+    
     Open
 
 En la terminal:
+
 python3 rickandmorty.py
 
 En Neo4j:
+
 match (n) return (n)   # Verifica creación del grafo
 
 # Encontrar los personajes que han aparecido en la mayor cantidad de episodios:
